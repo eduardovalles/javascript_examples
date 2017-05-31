@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Ejercicio 2 - Eduardo Vall&eacute;s Mas</title>
+</head>
+<body>
+<p id="numeros"></p>
+
+<script>
+var n1 = parseInt(prompt("Dime l\u00EDmite inferior"));
+var n2 = parseInt(prompt("Dime l\u00EDmite superior"));
+for (n1; n1 <= n2; n1++) {
+    document.getElementById("numeros").innerHTML += n1 + "<br>";
+}
+</script>
+
+<!-- Este script de abajo solo muestra los números comprendidos entre n1 y n2, y no los propios números n1 y n2.
+
+<script>
+var n1 = parseInt(prompt("Dime l\u00EDmite inferior"));
+var n2 = parseInt(prompt("Dime l\u00EDmite superior"));
+for (n1 = n1+1; n1 < n2; n1++) {
+    document.getElementById("numeros").innerHTML += n1 + "<br>";
+}
+</script>
+-->
+
+</body>
+</html>

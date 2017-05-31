@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Ejercicio 2 - Eduardo Vall&eacute;s Mas</title>
+</head>
+<body>
+
+<a id="version" style="font-family:Arial;"></a>
+
+<script>
+var version = "";
+version += "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+version += "<p>Browser Name: " + navigator.appName + "</p>";
+version += "<p>Browser Version: " + navigator.appVersion + "</p>";
+version += "<p>Cookies Enabled: " + navigator.cookieEnabled + "</p>";
+version += "<p>Browser Language: " + navigator.language + "</p>";
+version += "<p>Browser Online: " + navigator.onLine + "</p>";
+version += "<p>Platform: " + navigator.platform + "</p>";
+version += "<p>User-agent header: " + navigator.userAgent + "</p>";
+
+document.getElementById("version").innerHTML = version;
+</script>
+
+</body>
+</html>

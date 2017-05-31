@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Ejercicio 3 - Eduardo Vall&eacute;s Mas</title>
+</head>
+<body>
+
+<table>
+	<form id="f">
+		<tr><td>Precio: </td><td><input type="text" id="precio" onfocus="this.style.background='yellow';" onblur="this.style.background='';"></td></tr>
+	<br>
+		<tr><td>Cantidad: </td><td><input type="text" id="cantidad"onfocus="this.style.background='yellow';" onblur="this.style.background='';"></td></tr>
+	<br>
+		<tr><td>Total: </td><td><input type="text" id="total" disabled></td></tr>
+	<br>
+		<tr><td>Total con IVA (21%): </td><td><input type="text" id="totalconiva" disabled></td></tr>
+	<br>
+		<tr><td><input type="button" value="Calcular" id="calcular" onclick="Calcular(f);"></td></tr>
+	</form>
+</table>
+
+<!--<script>
+function calcular(f) {
+var precio = parseFloat(f.precio.value);
+var cantidad = parseFloat(f.cantidad.value);
+var total = f.total.value = precio * cantidad;
+var totaliva = f.totaliva.value = cantidad * precio * (1.21);
+}
+
+</script>-->
+
+<script>
+function Calcular(f){
+f.total.value = f.precio.value * f.cantidad.value;
+f.totalconiva.value = parseFloat(f.total.value) * 0.21 + parseFloat(f.total.value);
+}
+</script>
+
+
+</body>
+</html>

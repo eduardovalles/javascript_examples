@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Ejercicio 1 - Eduardo Vall&eacute;s Mas</title>
+</head>
+<body>
+
+<script>
+var nombre = prompt("Dime tu nombre");
+
+if (nombre) {
+var respuesta = confirm("\u00BFQuieres mostrar tu nombre en la pantalla?");
+	if (respuesta == true){
+		document.write(nombre);
+	} 
+	else {
+		document.write("Has decidido no escribir tu nombre");
+	}
+} 
+else {
+		document.write("Has cancelado el formulario :'(");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<body onload="alert('Juega con Sonic!');" onresize="alert('Mini Sonic! :^)');"><center>
+<h1>Sonic! The Hedgehog</h1>
+<button type="button" onclick="funcionmapa1()">Mapa 1</button>
+<br>
+<button type="button" onclick="funcionmapa2()">Mapa 2</button>
+<br>
+<img width=30% id="sonic" src="1.gif" onmouseover="this.src='2.gif';" onmouseout="this.src='1.gif';" oncontextmenu="alert('No hackees a Sonic!');">
+
+<br><br>
+<button onclick="Recargar()">Recargar</button>
+<script>
+function Recargar() {
+	location.reload();
+}
+function funcionmapa1() {
+	document.body.style.backgroundImage = "url('mapa1.png')";
+}
+function funcionmapa2() {
+	document.body.style.backgroundImage = "url('mapa2.png')";
+}
+
+document.getElementById("sonic").addEventListener("wheel", ruedadelraton);
+
+function ruedadelraton() {
+	this.style.width = "1000px";
+}
+</script>
+
+</center></body>
+</html>

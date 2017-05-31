@@ -1,0 +1,81 @@
+<html>
+<!--Diseñar un formulario web en html con 5 campos:
+nombre
+apellidos
+dni
+telefono
+edad
+- No permitir que se envie la informacion si alguno de los campos esta vacio y mostrar un aviso.
+- Comprobar que el valor introducido en el campo edad es de tipo numerico (funcion isFinite). Visualizar el mensaje en caso contrario.
+- Añador al formulario anterior el campo Código Postal.
+- Validar los campos DNI, telefono y codigo postal con expresiones regulares.
+	telefono 9 digitos
+	codigo postal 5 digitos
+	dni 8 digitos + - + letra
+- Email como email.
+-->
+
+<HEAD>
+<TITLE>Ejercicio 1 UD2 Eduardo Vallés Mas</TITLE>
+</HEAD>
+<BODY>
+
+<form name="miFormulario1" action="mailto:eduardovallesmas@gmail.com" onSubmit="return Valida(this);">
+Email <input type="email" name="Email">
+<br>
+Nombre <input type="text" name="Nombre">
+<br>
+Apellido <input type="text" name="Apellido">
+<br>
+DNI <input type="text" name="DNI">
+<br>
+Tel&eacute;fono <input type="text" name="Telefono">
+<br>
+Edad <input type="text" name="Edad">
+<br>
+CP <input type="text" name="CP">
+<br>
+<input type="submit" value="Enviar" name="Enviar">
+</form>
+
+<script>
+function Valida(miFormulario1) {
+ var telefono=/(^([0-9]{9,9})|^)$/
+ var cp=/(^([0-9]{5,5})|^)$/
+ var dni=/(^([0-9]{8,8}\-[A-Z])|^)$/
+ if ((miFormulario1.Email.value.length ==0) || 
+(miFormulario1.Nombre.value.length == 0) || 
+(miFormulario1.Apellido.value.length ==0) || 
+(miFormulario1.DNI.value.length ==0) || 
+(miFormulario1.Telefono.value.length ==0) || 
+(miFormulario1.Edad.value.length ==0) || 
+(miFormulario1.CP.value.length ==0)) {
+ alert('Falta informaci\u00F3n');
+return false;
+ }
+ if (isNaN(parseInt(miFormulario1.Edad.value))) {
+ alert('La edad debe ser un n\u00FAmero');
+return false;
+ }
+ if (isNaN(parseInt(miFormulario1.Telefono.value))) {
+ alert('El tel\u00E9fono debe ser un n\u00FAmero');
+return false;
+ }
+ if (!(telefono.test(miFormulario1.Telefono.value))) {
+ alert('Contenido del campo Tel\u00E9fono no es un n\u00FAmero v\u00E1lido');
+ return false;
+ }
+ if (!(cp.test(miFormulario1.CP.value))) {
+ alert('Contenido del campo CP no es un n\u00FAmero v\u00E1lido');
+ return false;
+ }
+ if (!(dni.test(miFormulario1.DNI.value))) {
+ alert('Contenido del campo DNI no es un n\u00FAmero v\u00E1lido');
+ return false;
+ }
+return true
+ }
+</script>
+
+</BODY>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head><meta charset="UTF-8">
+	<title>Examen Javascript - Eduardo Vall&eacute;s Mas</title>
+</head>
+
+<body onload="window.alert('Bienvenido a la página web del centro IES Serpis. Agradecemos su interés por nuestra oferta educativa.')">
+
+<!--<body onload="cookie();">-->
+
+<a href="http://www.institutoserpis.org/" onmouseover="window.location=this.href"><br><img src="logo.png"/></a>
+
+<form id="f">
+	<table>
+		<tr><td>Nombre: </td><td><input type="text" id="Nombre" onfocus="this.style.background='yellow';" onblur="this.style.background='';" required></td></tr>
+	<br>
+		<tr><td>Apellidos: </td><td><input type="text" id="Apellidos" onfocus="this.style.background='yellow';" onblur="this.style.background='';" required></td></tr>
+	<br>
+		<tr><td>Domicilio: </td><td><input type="text" id="Domicilio" onfocus="this.style.background='yellow';" onblur="this.style.background='';" required></td></tr>
+	<br>
+		<tr><td>Código postal: </td><td><input type="text" id="Codigopostal" onfocus="this.style.background='yellow';" onblur="this.style.background='';" onchange="codigo(f);" required></td></tr>
+	<br>
+		<tr><td>Provincia: </td><td><input type="text" id="Provincia" onfocus="this.style.background='yellow';" onblur="this.style.background='';" disabled></td></tr>
+	</table>
+	<br><br>Módulos:<br>
+		<input type="checkbox" id="o1" value=""> Implantación de aplicaciones web<br>
+		<input type="checkbox" id="o2" value=""> Seguridad y alta disponibilidad<br>
+		<input type="checkbox" id="o3" value=""> Servicios de red e Internet<br>
+		<input type="checkbox" id="o4" value=""> Administración de sistemas operativos<br>
+		<input type="checkbox" id="o5" value=""> Administración de sistemas gestores de bases de datos<br><br>
+		<input type="button" value="Matricular" id="Matricular" onClick="validate()">
+		<input type="reset" value="Restablecer" id="Restablecer">
+</form>
+
+<script>
+function codigo() {
+var cp=/(^([0-9]{5,5})|^)$/
+var res=f.Codigopostal.value.substr(0, 2)
+if (!(cp.test(f.Codigopostal.value))) {
+ alert('El código postal no es correcto.'); 
+} else { if (res == 46){f.Provincia.value="Valencia";} 
+	 else { if (res == 12){f.Provincia.value="Castellón";}
+		else { if (res == 03){f.Provincia.value="Alicante";}
+return false;}}}
+return true;
+}
+
+function validate(){
+var boxes=f.getElementsByTagName("inputs"), count = 0
+
+if (f.o1.checked == false){
+          alert("Debe de matricularse de al menos un módulo."); }
+else {
+var respuesta = confirm("¿Está usted seguro que quiere matricularse de " + boxes + " módulos?")
+	if (respuesta == true) {
+	var link = "mailto:correo@institutoserpis.org"
+	+ "?cc=micorreo@correo.com"
+	+ "&subject=" + escape("Correo de " + f.Nombre.value + f.Apellido.value)
+	+ "&body=" + escape("Este es el cuerpo del correo");
+	window.location.href = link;}}
+}
+
+/*function cookie(){
+if (document.cookie.indexOf("visited") > -1) {}
+else {
+  document.cookie = "visited=yes";
+  alert("Bienvenido a la página web del centro IES Serpis. Agradecemos su interés por nuestra oferta educativa.");}
+}*/
+</script>
+
+
+</body>
+</html>

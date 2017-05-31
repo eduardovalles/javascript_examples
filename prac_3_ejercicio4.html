@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Ejercicio 4 - Eduardo Vall&eacute;s Mas</title>
+</head>
+<body onload="leercookie()">
+<form name="usuario">
+Nombre de usuario:<input type="text" name="user">
+<br>
+<input type="submit" value="Enviar" name="enviar"><input type="reset" value="Reset" name="reset">
+</form>
+
+<script>
+function creacookie() {
+document.cookie = "usuario=" + usuario.user.value;
+}
+function leercookie() {
+var posicion_del_igual = document.cookie.indexOf("=");
+if (posicion_del_igual > 0) {
+	var nombre = document.cookie.substring(posicion_del_igual + 1,document.cookie.length);
+	document.write("Bienvenido "+ nombre); }
+}
+</script>
+
+</body>
+</html>

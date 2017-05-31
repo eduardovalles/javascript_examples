@@ -1,0 +1,44 @@
+<html>
+<head><meta charset="UTF-8">
+	<title>Ejercicio 2 - Eduardo Vall&eacute;s Mas</title>
+</head>
+<body>
+
+<table>
+	<form id="f">
+	<tr><td>Artículo: </td><td><select name="menu" onChange="Articulo()">
+		<option value="" selected disabled>Artículo</option>
+		<option value="">Ratón</option>
+		<option value="">Teclado</option>
+		<option value="">Impresora</option>
+	</select></td></tr>
+		<tr><td>Descripción: </td><td><input type="text" id="descripcion" onfocus="this.style.background='yellow';" onblur="this.style.background='';" autofocus></td></tr>
+	<br>
+		<tr><td>Precio: </td><td><input type="text" id="precio" onfocus="this.style.background='yellow';" onblur="this.style.background='';"></td></tr>
+	<br>
+		<tr><td>Cantidad: </td><td><input type="text" id="cantidad" onfocus="this.style.background='yellow';" onblur="this.style.background='';"></td></tr>
+	<br>
+		<tr><td>Total: </td><td><input type="text" id="total" disabled></td></tr>
+	<br>
+		<tr><td>Total con IVA (21%): </td><td><input type="text" id="totalconiva" disabled></td></tr>
+	<br>
+		<tr><td><input type="button" value="Calcular" id="calcular" onclick="Calcular(f);"></td></tr>
+	</form>
+</table>
+
+<script>
+function Calcular(f){
+f.total.value = f.precio.value * f.cantidad.value;
+f.totalconiva.value = parseFloat(f.total.value) * 0.21 + parseFloat(f.total.value);
+}
+function Articulo(){
+var respuesta = confirm("\u00BFQuieres ir a la tienda online?");
+	if (respuesta == true){
+		window.open("https://www.pccomponentes.com/");
+	}
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Ejercicio 3 - Eduardo Vall&eacute;s Mas</title>
+</head>
+<body>
+
+<table>
+	<form name="usuarioypass" onSubmit="return Valida(this);">
+		<tr><td>eMail </td><td><input type="email" name="email"></td></tr>
+	<br>
+		<tr><td>Nombre de usuario: </td><td><input type="text" name="user"></td></tr>
+	<br>
+		<tr><td>Contrase&ntilde;a: </td><td><input type="password" name="pass1" required></td></tr>
+	<br>
+		<tr><td>Validar contrase&ntilde;a: </td><td><input type="password" name="pass2" required></td></tr>
+	<br>
+		<tr><td><input type="submit" value="Enviar" name="enviar"></td></tr>
+		<tr><td><input type="reset" value="Reset" name="reset"></td></tr>
+	</form>
+</table>
+
+<script>
+function Valida(usuarioypass) {
+	if ((usuarioypass.email.value.length == 0) || 
+	(usuarioypass.user.value.length == 0)) {
+	alert('Falta informaci\u00F3n');
+	return false;
+	}
+	if ((usuarioypass.pass1.value.length != 6)) {
+	alert('La contrase\u00f1a debe tener almenos 6 letras');
+	return false;
+	}
+if (usuarioypass.pass1.value != usuarioypass.pass2.value) {
+	alert('Las contrase\u00f1as deben ser iguales');
+	return false;
+	}
+return true
+}
+</script>
+
+</body>
+</html>
